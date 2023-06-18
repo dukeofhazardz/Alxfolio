@@ -8,7 +8,15 @@
 </head>
 <body>
     <h1>Login Page</h1>
-    <a href="{{url_for('signup')}}">Signup Page</a>
-    <a href="{{url_for('home')}}">Home</a>
+    <form method="POST" action="">
+        {{ form.csrf_token }}
+        {{ form.hidden_tag() }}
+        {{ form.email }}
+        {{ form.password }}
+        {{ form.submit }}
+    </form>
+
+    <a href="{{url_for('signup')}}">Don't have an account? Sign Up!</a><br>
+    <a href="{{url_for('home')}}">Home</a><br>
 </body>
 </html>
