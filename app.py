@@ -89,13 +89,8 @@ def login():
         if user:
             if bcrypt.check_password_hash(user.password, form.password.data):
                 login_user(user)
-<<<<<<< HEAD
-                return redirect(url_for('dashboard'))
-    return render_template("login.html", form=form, title="login")
-=======
                 return redirect(url_for('dashboard', user=user.github_username))
-    return render_template("login.html", form=form)
->>>>>>> bae40ca (Implemented Github API)
+    return render_template("login.html", form=form, title="login")
 
 @app.route('/logout', strict_slashes=False,
            methods=['GET', 'POST'])
@@ -107,14 +102,6 @@ def logout():
 @app.route("/dashboard/<user>", strict_slashes=False,
            methods=['GET', 'POST'])
 @login_required
-<<<<<<< HEAD
-def dashboard():
-    return render_template("dashboard.html", title="dashboard")
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
-=======
 def dashboard(user):
     username = user
     check_repo_exists = "alx-system_engineering-devops"
@@ -135,4 +122,3 @@ def dashboard(user):
 
 if __name__ == "__main__":
     app.run(debug=True, port=6060)
->>>>>>> bae40ca (Implemented Github API)
