@@ -8,7 +8,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import InputRequired, Length, ValidationError
 from flask_bcrypt import Bcrypt
-from github import Github
+from functions import *
 
 
 app = Flask(__name__)
@@ -104,19 +104,9 @@ def logout():
 @login_required
 def dashboard(user):
     username = user
-    check_repo_exists = "alx-system_engineering-devops"
-    g = Github(base_url="https://api.github.com")
     user = g.get_user(username)
-    repo = g.get_repo(f"{username}/{check_repo_exists}")
-    if repo:
-        alx = True
-
-    all_repos = []
-    repos = user.get_repos()
-    for repo in repos:
-        repo = str(repo).split('/')[1][:-2]
-        all_repos.append(repo)
-
+    alx = validate_alx(username)
+    all_repos = get_all_repos(username)
     return render_template("dashboard.html", alx=alx, user=user, all_repos=all_repos)
 
 
