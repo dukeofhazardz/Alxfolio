@@ -4,6 +4,7 @@
 from flask_login import UserMixin
 from models.basemodel import Base, BaseModel
 from sqlalchemy import Column, String
+from sqlalchemy.orm import relationship
 
 
 class User(Base, BaseModel, UserMixin):
@@ -15,3 +16,5 @@ class User(Base, BaseModel, UserMixin):
     email = Column(String(128), nullable=False, unique=True)
     password = Column(String(128), nullable=False)
     phone_no = Column(String(15))
+    education = relationship('Education', backref='user')
+    socials = relationship('Socials', backref='user')

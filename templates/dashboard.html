@@ -20,5 +20,7 @@
             You are not an ALX student
         </h1>
     {% endif %}
+    <a href="{{ url_for('addEducation', user=user.login) }}">click here to add education</a><br>
+    <a href="{{ url_for('addSocials', user=user.login) }}">click here to to add socials and bio</a><br>
 </body>
 </html>

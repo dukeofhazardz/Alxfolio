@@ -12,6 +12,7 @@ for repo in repos:
     repo = str(repo).split('/')[1]
     repo = repo[:-2]
     print(repo)
+print(user.login)
 
 
 '''if repo:

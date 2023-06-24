@@ -3,8 +3,13 @@
 
 from models.basemodel import Base
 from models.user import User
+from models.education import Education
+from models.socials import Socials
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
+
+classes = {"User": User, "Education": Education,
+           "Socials": Socials}
 
 
 class DBStorage:
@@ -19,20 +24,30 @@ class DBStorage:
         self.__engine = create_engine("mysql+mysqldb://gitfolio_dev:gitfolio_pwd@localhost/gitfolio_db",
                                       pool_pre_ping=True)
 
-    def all(self):
-        """ A method that retrieves all the data in a class
-            and returns it as a dict """
-        objs = self.__session.query(User).all()
-        return {"{}.{}".format(type(obj).__name__, obj.id) for obj in objs}
+    def all(self, cls=None):
+        """query on the current database session"""
+        new_dict = {}
+        for clss in classes:
+            if cls is None or cls is classes[clss] or cls is clss:
+                objs = self.__session.query(classes[clss]).all()
+                for obj in objs:
+                    key = obj.__class__.__name__ + '.' + obj.id
+                    new_dict[key] = obj
+        return (new_dict)
 
     def get_user(self, email):
-        """A method that get the data from storage for validation"""
+        """A method that get the data from storage for validation using the user's email"""
         user = self.__session.query(User).filter(User.email==email).first()
         return user
 
     def get_user_by_id(self, user_id):
-        """A method that get the data from storage for validation"""
+        """A method that get the data from storage for validation using user_id"""
         user = self.__session.query(User).filter(User.id==user_id).first()
+        return user
+    
+    def get_user_git(self, git_username):
+        """A method that get the data from storage for validation using user github username"""
+        user = self.__session.query(User).filter(User.github_username==git_username).first()
         return user
 
     def new(self, obj):

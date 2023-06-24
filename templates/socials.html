@@ -1,12 +1,14 @@
 {% include 'base.html' %}
 {% block main %}
   <div class="container">
-      <h1>Login Page</h1>
+      <h1>Add Socials</h1>
         <form method="POST" action="">
             {{ form.csrf_token }}<br>
             {{ form.hidden_tag() }}<br>
-            {{ form.email }}<br>
-            {{ form.password }}<br>
+            {{ form.bio }}<br>
+            {{ form.twitter }}<br>
+            {{ form.linkedin }}<br>
+            {{ form.instagram }}<br>
             {{ form.submit }}<br>
         </form>
   </div>
