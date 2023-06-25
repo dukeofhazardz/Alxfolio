@@ -49,6 +49,16 @@ class DBStorage:
         """A method that get the data from storage for validation using user github username"""
         user = self.__session.query(User).filter(User.github_username==git_username).first()
         return user
+    
+    def get_socials_git(self, user_id):
+        """A method that get the data from storage for validation using user id"""
+        user_socials = self.__session.query(Socials).filter(Socials.user_id==user_id).first()
+        return user_socials
+    
+    def get_education_git(self, user_id):
+        """A method that get the data from storage for validation using user id"""
+        user_education = self.__session.query(Education).filter(Education.user_id==user_id).first()
+        return user_education
 
     def new(self, obj):
         """ Adds the object to the current database session """
