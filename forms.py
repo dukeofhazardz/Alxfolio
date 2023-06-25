@@ -3,38 +3,38 @@
 """A module containing all forms used in the app"""
 
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
+from wtforms import StringField, SubmitField, PasswordField
 from wtforms.validators import InputRequired, Length
 
 
 class SignupForm(FlaskForm):
     first_name = StringField(validators=[InputRequired(), Length(
-        min=4, max=20)], render_kw={"placeholder": "First Name"})
+        min=2, max=100)], render_kw={"placeholder": "First Name"})
     
     last_name = StringField(validators=[InputRequired(), Length(
-        min=4, max=20)], render_kw={"placeholder": "Last Name"})
+        min=2, max=100)], render_kw={"placeholder": "Last Name"})
     
     github_username = StringField(validators=[InputRequired(), Length(
-        min=4, max=20)], render_kw={"placeholder": "Github Username"})
+        min=4, max=100)], render_kw={"placeholder": "Github Username"})
     
     email = StringField(validators=[InputRequired(), Length(
-        min=4, max=20)], render_kw={"placeholder": "Email"})
+        min=10, max=100)], render_kw={"placeholder": "Email"})
     
-    password = StringField(validators=[InputRequired(), Length(
-        min=4, max=20)], render_kw={"placeholder": "Password"})
+    password = PasswordField(validators=[InputRequired(), Length(
+        min=8, max=100)], render_kw={"placeholder": "Password"})
     
     phone_no = StringField(validators=[InputRequired(), Length(
-        min=4, max=20)], render_kw={"placeholder": "Phone Number"})    
+        min=8, max=100)], render_kw={"placeholder": "Phone Number"})    
 
     submit = SubmitField("Signup")
 
 
 class LoginForm(FlaskForm):
     email = StringField(validators=[InputRequired(), Length(
-        min=4, max=20)], render_kw={"placeholder": "Email"})
+        min=10, max=100)], render_kw={"placeholder": "Email"})
     
-    password = StringField(validators=[InputRequired(), Length(
-        min=4, max=20)], render_kw={"placeholder": "Password"})  
+    password = PasswordField(validators=[InputRequired(), Length(
+        min=8, max=100)], render_kw={"placeholder": "Password"})  
 
     submit = SubmitField("Login")
 

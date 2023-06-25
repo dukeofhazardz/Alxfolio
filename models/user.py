@@ -15,6 +15,6 @@ class User(Base, BaseModel, UserMixin):
     github_username = Column(String(128), nullable=False)
     email = Column(String(128), nullable=False, unique=True)
     password = Column(String(128), nullable=False)
-    phone_no = Column(String(15))
+    phone_no = Column(String(20))
     education = relationship('Education', backref='user')
     socials = relationship('Socials', backref='user')

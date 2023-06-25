@@ -14,11 +14,26 @@
             <ul>
                 <li>{{ repo }}</li>
             </ul>
-        {% endfor %}   
+        {% endfor %}
     {% else %}
         <h1>
             You are not an ALX student
         </h1>
+    {% endif %}
+    <h3>About me</h3>
+    <p>{{ bio }}</p><br>
+    <h3>Education</h3>
+    <p>{{ education.school }}</p>
+    <p>{{ education.year }}</p>
+    <p>{{education.degree}}</p>
+    
+    <h3>You can contact me</h3>
+    {% if socials %}
+    {% for social in socials %}
+        <ul>
+            <li>{{ social }}</li>
+        </ul>
+    {% endfor %}
     {% endif %}
     <a href="{{ url_for('addEducation', user=user.login) }}">click here to add education</a><br>
     <a href="{{ url_for('addSocials', user=user.login) }}">click here to to add socials and bio</a><br>
