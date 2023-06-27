@@ -20,14 +20,29 @@ def get_all_repos(username):
     username = g.get_user(username)
     repos = username.get_repos()
     for repo in repos:
-        all_repos.append(repo.name)
+        repo_details = {
+            "name": repo.name,
+            "url": repo.html_url,
+            "description": repo.description}
+        all_repos.append(repo_details)
     return all_repos
 
 def get_bio(user_id):
-
     bio = storage.get_socials_git(user_id)
     if bio:
         return bio.bio
+    return None
+
+def get_title(user_id):
+    title = storage.get_socials_git(user_id)
+    if title:
+        return title.title
+    return None
+
+def get_whatido(user_id):
+    whatido = storage.get_socials_git(user_id)
+    if whatido:
+        return whatido.whatido
     return None
 
 def get_socials(user_id):

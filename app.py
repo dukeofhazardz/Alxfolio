@@ -47,7 +47,8 @@ def signup():
                             github_username=form.github_username.data,
                             email=form.email.data,
                             password=hashed_password,
-                            phone_no=form.phone_no.data)
+                            phone_no=form.phone_no.data,
+                            address=form.address.data)
             storage.new(new_user)
             storage.save()
             return redirect(url_for('login'))
@@ -82,15 +83,18 @@ def logout():
 def dashboard(user):
     username = user
     user_id = storage.get_user_git(user).id
+    address = storage.get_user_git(user).address
     user = g.get_user(username)
     alx = validate_alx(username)
     all_repos = get_all_repos(username)
     bio = get_bio(user_id)
+    whatido = get_whatido(user_id)
+    title = get_title(user_id)
     socials = get_socials(user_id)
     education = get_education(user_id)
-    return render_template("dashboard.html", alx=alx,
-                           user=user, all_repos=all_repos,
-                           bio=bio, socials=socials,
+    return render_template("dashboard.html", alx=alx, whatido=whatido,
+                           user=user, all_repos=all_repos, title=title,
+                           bio=bio, socials=socials, address=address,
                            education=education, user_id=user_id)
 
 @app.route("/dashboard/<user>/education", strict_slashes=False,
@@ -136,6 +140,10 @@ def addSocials(user):
             if socials:
                 if form.bio.data:
                     socials.bio = form.bio.data
+                if form.title.data:
+                    socials.title = form.title.data
+                if form.whatido.data:
+                    socials.whatido = form.whatido.data
                 if form.twitter.data:
                     socials.twitter = form.twitter.data
                 if form.linkedin.data:
@@ -145,10 +153,12 @@ def addSocials(user):
                 storage.save()
             else:
                 user_socials = Socials(bio=form.bio.data,
-                                        twitter=form.twitter.data,
-                                        linkedin=form.linkedin.data,
-                                        instagram=form.instagram.data,
-                                        user=user)
+                                       title=form.title.data,
+                                       whatido=form.title.data,
+                                       twitter=form.twitter.data,
+                                       linkedin=form.linkedin.data,
+                                       instagram=form.instagram.data,
+                                       user=user)
                 storage.new(user_socials)
                 storage.save()
             return redirect(url_for('dashboard', user=user.github_username))
