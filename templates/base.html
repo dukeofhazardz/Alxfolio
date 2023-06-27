@@ -8,7 +8,6 @@
 </head>
 <body>
 	<div class="container">
-    	<h1>Home Page</h1>
 		{% with messages = get_flashed_messages() %}
 			{% if messages %}
         		{% for message in messages %}
@@ -16,8 +15,6 @@
       			{% endfor %}
       		{% endif %}
     	{% endwith %}
-		<a href="{{url_for('login')}}">Login</a><br>
-		<a href="{{url_for('signup')}}">Signup</a><br>
 	</div>
 	{% block main %}
 

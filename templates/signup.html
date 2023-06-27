@@ -11,7 +11,10 @@
             {{ form.email }}<br>
             {{ form.password }}<br>
             {{ form.phone_no }}<br>
+            {{ form.address }}<br>
             {{ form.submit }}<br>
         </form>
-   </div>
+   </div><br><br>
+	<a href="{{url_for('home')}}">Home</a><br>
+	<a href="{{url_for('login')}}">Already have an account? Login!</a><br>
 {% endblock %}

@@ -24,7 +24,10 @@ class SignupForm(FlaskForm):
         min=8, max=100)], render_kw={"placeholder": "Password"})
     
     phone_no = StringField(validators=[InputRequired(), Length(
-        min=8, max=100)], render_kw={"placeholder": "Phone Number"})    
+        min=8, max=100)], render_kw={"placeholder": "Phone Number"})  
+
+    address = StringField(validators=[InputRequired(), Length(
+        min=8, max=200)], render_kw={"placeholder": "State, Country"})   
 
     submit = SubmitField("Signup")
 
@@ -53,8 +56,14 @@ class EducationForm(FlaskForm):
 
 
 class SocialsForm(FlaskForm):
-    bio = twitter = StringField(validators=[Optional(), Length(
+    bio = StringField(validators=[Optional(), Length(
         min=10, max=1000)], render_kw={"placeholder": "Bio"})
+
+    title = StringField(validators=[Optional(), Length(
+        min=10, max=1000)], render_kw={"placeholder": "Title/Role"})
+    
+    whatido = StringField(validators=[Optional(), Length(
+        min=10, max=1000)], render_kw={"placeholder": "A short paragraph on what you do"})
 
     twitter = StringField(validators=[Optional(), Length(
         min=10, max=100)], render_kw={"placeholder": "Twitter Url"})

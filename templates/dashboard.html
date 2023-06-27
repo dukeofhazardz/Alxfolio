@@ -1,31 +1,42 @@
 {% include 'base.html' %}
 {% block main %}
-    <h1>Hello you are logged in!</h1>
+    <h1>Welcome {{ user.login }}</h1>
+    <a href="{{url_for('home')}}">click here to go Home</a><br>
     <a href="{{ url_for('logout') }}">click here to Logout</a>
 {% endblock %}
     {% if alx == True %}
         <h1>
-            You are an ALX student
+            ALX Fellow 📚🏅🎓🌟
         </h1>
-        <p> {{ user.name }}</p><br>
-        <p> {{ user.bio }} </p><br>
-        <h3> Your Repos are </h3>
-        {% for repo in all_repos %}
-            <ul>
-                <li>{{ repo }}</li>
-            </ul>
-        {% endfor %}
     {% else %}
         <h1>
             You are not an ALX student
         </h1>
     {% endif %}
+    <p> {{ user.name }}</p>
+    <p> {{ user.bio }} </p><br>
+    <h3> Projects </h3>
+    {% for repo in all_repos %}
+        <ul>
+            <li>
+                <a href="{{ repo.url }}">{{ repo.name }}</a>
+                <p>{{ repo.description }}</p>
+            </li>
+        </ul>
+    {% endfor %}<br>
+
     <h3>About me</h3>
+    <h4>{{ user.name }}</h4>
+    <p>{{ title }}</p>
     <p>{{ bio }}</p><br>
+
+    <h3>What I do</h3>
+    <p>{{ whatido }}</p><br>
+
     <h3>Education</h3>
     <p>{{ education.school }}</p>
     <p>{{ education.year }}</p>
-    <p>{{education.degree}}</p>
+    <p>{{ education.degree }}</p><br>
     
     <h3>You can contact me</h3>
     {% if socials %}
@@ -34,7 +45,9 @@
             <li>{{ social }}</li>
         </ul>
     {% endfor %}
-    {% endif %}
+    {% endif %}<br>
+    <h3>Address</h3>
+    <p>{{ address }}</p><br>
     <a href="{{ url_for('addEducation', user=user.login) }}">click here to add education</a><br>
     <a href="{{ url_for('addSocials', user=user.login) }}">click here to to add socials and bio</a><br>
 </body>

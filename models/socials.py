@@ -10,6 +10,8 @@ class Socials(Base, BaseModel, UserMixin):
     """This class defines a user by various attributes"""
     __tablename__ = "socials"
     bio = Column(String(1000), nullable=True)
+    title = Column(String(1000), nullable=True)
+    whatido = Column(String(1000), nullable=True)
     twitter = Column(String(100), nullable=True)
     linkedin = Column(String(100), nullable=True)
     instagram = Column(String(100), nullable=True)
