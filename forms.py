@@ -4,7 +4,7 @@
 
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, PasswordField
-from wtforms.validators import InputRequired, Length
+from wtforms.validators import InputRequired, Length, Optional
 
 
 class SignupForm(FlaskForm):
@@ -53,16 +53,16 @@ class EducationForm(FlaskForm):
 
 
 class SocialsForm(FlaskForm):
-    bio = twitter = StringField(validators=[InputRequired(), Length(
+    bio = twitter = StringField(validators=[Optional(), Length(
         min=10, max=1000)], render_kw={"placeholder": "Bio"})
 
-    twitter = StringField(validators=[InputRequired(), Length(
+    twitter = StringField(validators=[Optional(), Length(
         min=10, max=100)], render_kw={"placeholder": "Twitter Url"})
     
-    linkedin = StringField(validators=[InputRequired(), Length(
+    linkedin = StringField(validators=[Optional(), Length(
         min=10, max=100)], render_kw={"placeholder": "Linkedin Url"})
     
-    instagram = StringField(validators=[InputRequired(), Length(
+    instagram = StringField(validators=[Optional(), Length(
         min=10, max=100)], render_kw={"placeholder": "Instagram Url"})
     
     submit = SubmitField("Save")

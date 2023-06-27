@@ -103,12 +103,22 @@ def addEducation(user):
         if form.validate_on_submit():
             storage.reload()
             user = storage.get_user_git(user)
-            user_education = Education(school=form.school.data,
-                                    year=form.year.data,
-                                    degree=form.degree.data,
-                                    user=user)
-            storage.new(user_education)
-            storage.save()
+            education = storage.get_education_git(user.id)
+            if education:
+                if form.school.data:
+                    education.school = form.school.data
+                if form.year.data:
+                    education.year = form.year.data
+                if form.degree.data:
+                    education.degree = form.degree.data
+                storage.save()
+            else:
+                user_education = Education(school=form.school.data,
+                                        year=form.year.data,
+                                        degree=form.degree.data,
+                                        user=user)
+                storage.new(user_education)
+                storage.save()
             return redirect(url_for('dashboard', user=user.github_username))
     return render_template("education.html", form=form, title="education")
 
@@ -122,13 +132,25 @@ def addSocials(user):
         if form.validate_on_submit():
             storage.reload()
             user = storage.get_user_git(user)
-            user_socials = Socials(bio=form.bio.data,
-                                    twitter=form.twitter.data,
-                                    linkedin=form.linkedin.data,
-                                    instagram=form.instagram.data,
-                                    user=user)
-            storage.new(user_socials)
-            storage.save()
+            socials = storage.get_socials_git(user.id)
+            if socials:
+                if form.bio.data:
+                    socials.bio = form.bio.data
+                if form.twitter.data:
+                    socials.twitter = form.twitter.data
+                if form.linkedin.data:
+                    socials.linkedin = form.linkedin.data
+                if form.instagram.data:
+                    socials.instagram = form.instagram.data
+                storage.save()
+            else:
+                user_socials = Socials(bio=form.bio.data,
+                                        twitter=form.twitter.data,
+                                        linkedin=form.linkedin.data,
+                                        instagram=form.instagram.data,
+                                        user=user)
+                storage.new(user_socials)
+                storage.save()
             return redirect(url_for('dashboard', user=user.github_username))
     return render_template("socials.html", form=form, title="socials")
 
