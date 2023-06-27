@@ -4,16 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',  filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',  filename='css/aos.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',  filename='css/line-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',  filename='css/style.css') }}">
     <title>{{ title }}<title>
 </head>
 <body>
-	<div class="container">
-    		<h1>Home Page</h1>
-    			<a href="{{url_for('login')}}">Login</a><br>
-    			<a href="{{url_for('signup')}}">Signup</a><br>
-	</div>
+	<!--NAVBAR-->
+	<nav class="navbar navbar-expand-lg navbar-dark">
+	    <div class="container-fluid">
+	        <a class="navbar-brand" href="#">
+			<span class="h3 fw-bold"   >GITFolio</span>
+		</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		     <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+		    <ul class="navbar-nav ms-auto">
+			<li class="nav-item">
+			    <a class="nav-link active" aria-current="page" href="#">Home</a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link" href="#">About</a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link" href="#">Members</a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link disabled">Support</a>
+			</li>
+		    </ul>
+		</div>
+
+	    </div>
+	    <form class="container-fluid justify-content-start">
+		    <button class="btn btn-outline-success me-2" type="button"><a href="{{url_for('login')}}">Login</a><br></button>
+		    <button class="btn btn-sm btn-outline-secondary" type="button"> <a href="{{url_for('signup')}}">Signup</a><br></button>
+			      </form>
+
+	<!--NAVBAR-->
+	</nav>
 	{% block main %}
 
 	{% endblock %}
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/aos.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"> </script>
 </body>
 </html>
