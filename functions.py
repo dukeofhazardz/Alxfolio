@@ -60,3 +60,8 @@ def get_education(user_id):
     if education:
         return education
     return None
+
+def get_all_user(User):
+    all_users = storage.all(User)
+    all = [user for user in all_users.values()]
+    return all

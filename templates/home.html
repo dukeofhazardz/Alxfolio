@@ -3,6 +3,14 @@
 <div class="container">
     <h1>Home Page</h1>
 </div><br><br>
+<p>Signup to Alxfolio to spin up a personal portfolio from Github!</p><br>
+{% for user in all_users %}
+    <ul>
+        <li>
+            <a href="{{url_for('userPortfolio', user=user.github_username)}}">{{ user.first_name }} {{ user.last_name }}</a><br>
+        </li>
+    </ul>
+{% endfor %}
 <a href="{{url_for('login')}}">Login</a><br>
 <a href="{{url_for('signup')}}">Signup</a><br>
 {% endblock %}

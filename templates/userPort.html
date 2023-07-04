@@ -1,8 +1,6 @@
 {% include 'base.html' %}
 {% block main %}
-    <h1>Welcome {{ user.login }}</h1>
     <a href="{{url_for('home')}}">click here to go Home</a><br>
-    <a href="{{ url_for('logout') }}">click here to Logout</a>
 {% endblock %}
     {% if alx == True %}
         <h1>
@@ -10,7 +8,7 @@
         </h1>
     {% else %}
         <h1>
-            You are not an ALX student
+            Not an ALX Fellow
         </h1>
     {% endif %}
     <p> {{ user.name }}</p>
@@ -54,7 +52,5 @@
     {% endif %}<br>
     <h3>Address</h3>
     <p>{{ address }}</p><br>
-    <a href="{{ url_for('addEducation', user=user.login) }}">click here to add education</a><br>
-    <a href="{{ url_for('addSocials', user=user.login) }}">click here to to add socials and bio</a><br>
 </body>
 </html>
