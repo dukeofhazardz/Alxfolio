@@ -28,7 +28,8 @@ def load_user(user_id):
 
 @app.route("/", strict_slashes=False)
 def home():
-    return render_template("home.html", title="Home")
+    all_users = get_all_user(User)
+    return render_template("home.html", title="Home", all_users=all_users)
 
 @app.route("/signup", strict_slashes=False,
            methods=['GET', 'POST'])
@@ -52,7 +53,7 @@ def signup():
             storage.new(new_user)
             storage.save()
             return redirect(url_for('login'))
-    return render_template("signup.html", form=form, title="signup")
+    return render_template("signup.html", form=form, title="Signup")
 
 @app.route("/login", strict_slashes=False,
            methods=['GET', 'POST'])
@@ -67,7 +68,7 @@ def login():
                     login_user(user)
                     return redirect(url_for('dashboard', user=user.github_username))
             flash('Invalid email or password', 'error')
-    return render_template("login.html", form=form, title="login")
+    return render_template("login.html", form=form, title="Login")
 
 @app.route('/logout', strict_slashes=False,
            methods=['GET', 'POST'])
@@ -93,9 +94,9 @@ def dashboard(user):
     socials = get_socials(user_id)
     education = get_education(user_id)
     return render_template("dashboard.html", alx=alx, whatido=whatido,
-                           user=user, all_repos=all_repos, title=title,
+                           user=user, all_repos=all_repos, user_title=title,
                            bio=bio, socials=socials, address=address,
-                           education=education, user_id=user_id)
+                           education=education, user_id=user_id, title="Dashboard")
 
 @app.route("/dashboard/<user>/education", strict_slashes=False,
            methods=['GET', 'POST'])
@@ -124,7 +125,7 @@ def addEducation(user):
                 storage.new(user_education)
                 storage.save()
             return redirect(url_for('dashboard', user=user.github_username))
-    return render_template("education.html", form=form, title="education")
+    return render_template("education.html", form=form, title="Education")
 
 @app.route("/dashboard/<user>/socials", strict_slashes=False,
            methods=['GET', 'POST'])
@@ -162,8 +163,27 @@ def addSocials(user):
                 storage.new(user_socials)
                 storage.save()
             return redirect(url_for('dashboard', user=user.github_username))
-    return render_template("socials.html", form=form, title="socials")
+    return render_template("socials.html", form=form, title="Socials")
+
+@app.route("/<user>", strict_slashes=False,
+           methods=['GET', 'POST'])
+def userPortfolio(user):
+    username = user
+    user_id = storage.get_user_git(user).id
+    address = storage.get_user_git(user).address
+    user = g.get_user(username)
+    alx = validate_alx(username)
+    all_repos = get_all_repos(username)
+    bio = get_bio(user_id)
+    whatido = get_whatido(user_id)
+    title = get_title(user_id)
+    socials = get_socials(user_id)
+    education = get_education(user_id)
+    return render_template("userPort.html", alx=alx, whatido=whatido,
+                           user=user, all_repos=all_repos, user_title=title,
+                           bio=bio, socials=socials, address=address,
+                           education=education, user_id=user_id, title="Portfolio")
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=5000)
