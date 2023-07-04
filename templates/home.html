@@ -1,9 +1,10 @@
 {% include 'base.html' %}
 {% block base %}
 <div class="container">
-    <h1>Home Page</h1>
+    <h1>Alxfolio</h1>
 </div><br><br>
 <p>Signup to Alxfolio to spin up a personal portfolio from Github!</p><br>
+<h3>Below are the portfolios of our registered users</h3><br>
 {% for user in all_users %}
     <ul>
         <li>
@@ -12,5 +13,7 @@
     </ul>
 {% endfor %}
 <a href="{{url_for('login')}}">Login</a><br>
-<a href="{{url_for('signup')}}">Signup</a><br>
+<a href="{{url_for('signup')}}">Signup</a><br><br>
+
+<a href="https://github.com/dukeofhazardz/Alxfolio/">Star 🌟 us on Github</a><br>
 {% endblock %}
