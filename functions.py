@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+import github
 from models import storage
 from github import Github
 
@@ -7,25 +8,34 @@ g = Github(base_url="https://api.github.com")
 check_repo_exists = "alx-system_engineering-devops"
 
 def get_user(username):
-    username = g.get_user(username)
-    return username
+    try:
+        user = g.get_user(username)
+        return user
+    except github.GithubException.UnknownObjectException:
+        return None
 
 def validate_alx(username):
-    repo = g.get_repo(f"{username}/{check_repo_exists}")
-    if repo:
-        return True
+    try:
+        repo = g.get_repo(f"{username}/{check_repo_exists}")
+        if repo:
+            return True
+    except github.GithubException.UnknownObjectException:
+        return None
 
 def get_all_repos(username):
-    all_repos = []
-    username = g.get_user(username)
-    repos = username.get_repos()
-    for repo in repos:
-        repo_details = {
-            "name": repo.name,
-            "url": repo.html_url,
-            "description": repo.description}
-        all_repos.append(repo_details)
-    return all_repos
+    try:
+        all_repos = []
+        username = g.get_user(username)
+        repos = username.get_repos()
+        for repo in repos:
+            repo_details = {
+                "name": repo.name,
+                "url": repo.html_url,
+                "description": repo.description}
+            all_repos.append(repo_details)
+        return all_repos
+    except github.GithubException.UnknownObjectException:
+        return None
 
 def get_bio(user_id):
     bio = storage.get_socials_git(user_id)
