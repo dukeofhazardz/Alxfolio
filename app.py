@@ -168,21 +168,24 @@ def addSocials(user):
 @app.route("/<user>", strict_slashes=False,
            methods=['GET', 'POST'])
 def userPortfolio(user):
-    username = user
-    user_id = storage.get_user_git(user).id
-    address = storage.get_user_git(user).address
-    user = g.get_user(username)
-    alx = validate_alx(username)
-    all_repos = get_all_repos(username)
-    bio = get_bio(user_id)
-    whatido = get_whatido(user_id)
-    title = get_title(user_id)
-    socials = get_socials(user_id)
-    education = get_education(user_id)
-    return render_template("userPort.html", alx=alx, whatido=whatido,
-                           user=user, all_repos=all_repos, user_title=title,
-                           bio=bio, socials=socials, address=address,
-                           education=education, user_id=user_id, title="Portfolio")
+    if user:
+        username = user
+        user_id = storage.get_user_git(user).id
+        address = storage.get_user_git(user).address
+        user = g.get_user(username)
+        alx = validate_alx(username)
+        all_repos = get_all_repos(username)
+        bio = get_bio(user_id)
+        whatido = get_whatido(user_id)
+        title = get_title(user_id)
+        socials = get_socials(user_id)
+        education = get_education(user_id)
+        return render_template("userPort.html", alx=alx, whatido=whatido,
+                            user=user, all_repos=all_repos, user_title=title,
+                            bio=bio, socials=socials, address=address,
+                            education=education, user_id=user_id, title="Portfolio")
+    else:
+        return redirect(url_for('home'))
 
 
 if __name__ == "__main__":
