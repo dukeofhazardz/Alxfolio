@@ -11,7 +11,7 @@ def get_user(username):
     try:
         user = g.get_user(username)
         return user
-    except github.GithubException.UnknownObjectException:
+    except (github.GithubException, github.UnknownObjectException):
         return None
 
 def validate_alx(username):
@@ -19,7 +19,7 @@ def validate_alx(username):
         repo = g.get_repo(f"{username}/{check_repo_exists}")
         if repo:
             return True
-    except github.GithubException.UnknownObjectException:
+    except (github.GithubException, github.UnknownObjectException):
         return None
 
 def get_all_repos(username):
@@ -34,7 +34,7 @@ def get_all_repos(username):
                 "description": repo.description}
             all_repos.append(repo_details)
         return all_repos
-    except github.GithubException.UnknownObjectException:
+    except (github.GithubException, github.UnknownObjectException):
         return None
 
 def get_bio(user_id):

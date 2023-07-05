@@ -2,7 +2,7 @@
 
 from github import Github
 
-g = Github(base_url="https://api.github.com")
+'''g = Github(base_url="https://api.github.com")
 username = "dukeofhazardz"
 user = g.get_user(username)
 #repo_name = "alx-higher_level_programming"
@@ -19,7 +19,7 @@ for repo in repos:
 
 #print(dir(user))
 for repo in repos:
-    print([pull for pull in repo.get_pulls()])
+    print([pull for pull in repo.get_pulls()])'''
 """for v in all_repos:
     print(v)"""
 # ["repo_name": foo "details": {"desc": "foo", "url": "bar"}]
@@ -30,3 +30,6 @@ for repo in repos:
 print(user.id)
 language = repo.language
 print(language)'''
+import github
+
+print(dir(github))
