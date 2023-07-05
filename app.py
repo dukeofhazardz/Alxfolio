@@ -170,8 +170,12 @@ def addSocials(user):
 def userPortfolio(user):
     if user:
         username = user
-        user_id = storage.get_user_git(user).id
-        address = storage.get_user_git(user).address
+        user_obj = storage.get_user_git(user)
+        try:
+            user_id = user_obj.id
+            address = user_obj.address
+        except Exception as e:
+            print(e)
         user = g.get_user(username)
         alx = validate_alx(username)
         all_repos = get_all_repos(username)
