@@ -85,7 +85,7 @@ def dashboard(user):
     username = user
     user_id = storage.get_user_git(user).id
     address = storage.get_user_git(user).address
-    user = g.get_user(username)
+    user = get_user(username)
     alx = validate_alx(username)
     all_repos = get_all_repos(username)
     bio = get_bio(user_id)
@@ -176,7 +176,7 @@ def userPortfolio(user):
             address = user_obj.address
         except Exception as e:
             print(e)
-        user = g.get_user(username)
+        user = get_user(username)
         alx = validate_alx(username)
         all_repos = get_all_repos(username)
         bio = get_bio(user_id)
