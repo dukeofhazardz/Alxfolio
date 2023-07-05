@@ -171,6 +171,8 @@ def userPortfolio(user):
     if user:
         username = user
         user_obj = storage.get_user_git(user)
+        user_id = None
+        address = None
         try:
             user_id = user_obj.id
             address = user_obj.address
