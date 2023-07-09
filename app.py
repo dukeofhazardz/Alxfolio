@@ -9,7 +9,7 @@ from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import InputRequired, Length, ValidationError
 from flask_bcrypt import Bcrypt
 
-
+app = Flask(__name__)
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mysecretkey'
 bcrypt = Bcrypt(app)
@@ -63,7 +63,7 @@ class LoginForm(FlaskForm):
 
 @app.route("/", strict_slashes=False)
 def home():
-    return render_template("home.html", title="Home")
+    return render_template("home.html")
 
 @app.route("/signup", strict_slashes=False,
            methods=['GET', 'POST'])
@@ -80,7 +80,7 @@ def signup():
         storage.new(new_user)
         storage.save()
         return redirect(url_for('login'))
-    return render_template("signup.html", form=form, title="signup")
+    return render_template("signup.html", form=form)
 
 @app.route("/login", strict_slashes=False,
            methods=['GET', 'POST'])
@@ -93,7 +93,7 @@ def login():
             if bcrypt.check_password_hash(user.password, form.password.data):
                 login_user(user)
                 return redirect(url_for('dashboard'))
-    return render_template("login.html", form=form, title="login")
+    return render_template("login.html", form=form)
 
 @app.route('/logout', strict_slashes=False,
            methods=['GET', 'POST'])
@@ -106,7 +106,7 @@ def logout():
            methods=['GET', 'POST'])
 @login_required
 def dashboard():
-    return render_template("dashboard.html", title="dashboard")
+    return render_template("dashboard.html")
 
 
 if __name__ == "__main__":
