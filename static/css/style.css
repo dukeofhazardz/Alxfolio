@@ -1,1 +1,36 @@
-aa
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600;1,700&display=swap');
+ 
+:root {
+    --color-body: #9d9583;
+    --color-heading: #e3e3e3;
+    --color-base2: #191919;
+    --color-base: #022a30;
+    --color-brand: #e0f780;
+    --color-brand2: #deff58;
+    --font-base: "Bai Jamjree";
+}
+
+body {
+    background-color: var(--color-base2);
+    color: var(--color-body);
+    font-family: var(--font-base), sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: var(--color-heading);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-body);
+    transition: all 0.4s ease;
+}
+
+a:hover {
+    color: var(--color-heading);
+}
+
+@media (min-width: 992px) {
+    max-width: 1560px;
+    min-height: calc(100vh - 360px);

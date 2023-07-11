@@ -12,40 +12,53 @@
 <body>
 	<!--NAVBAR-->
 	<nav class="navbar navbar-expand-lg navbar-dark">
-	    <div class="container-fluid">
+	    <div class="container">
 	        <a class="navbar-brand" href="#">
-			<span class="h3 fw-bold"   >GITFolio</span>
+			<span class="h3 fw-bold">Alxfolio</span>
 		</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		     <span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNav">
 		    <ul class="navbar-nav ms-auto">
+			
 			<li class="nav-item">
 			    <a class="nav-link active" aria-current="page" href="#">Home</a>
 			</li>
+			
 			<li class="nav-item">
 			    <a class="nav-link" href="#">About</a>
 			</li>
+			
 			<li class="nav-item">
-			    <a class="nav-link" href="#">Members</a>
+			    <a class="nav-link" href="#">Work</a>
 			</li>
+
+			<li class="nav-item">
+			    <a class="nav-link" href="#">Blog</a>
+			</li>
+
+			<li class="nav-item">
+			    <a class="nav-link" href="#">Contact</a>
+			</li>
+			
 			<li class="nav-item">
 			    <a class="nav-link disabled">Support</a>
 			</li>
+
+			<form class="container-fluid justify-content-start">
+			      <button class="btn btn-sm btn-outline-secondary" type="button"><a href="{{url_for('login')}}">Login</a><br></button>
+			      <button class="btn btn-sm btn-outline-secondary" type="button"> <a href="{{url_for('signup')}}">Signup</a><br></button>
+									                              </form>
+
 		    </ul>
 		</div>
 
 	    </div>
-	    <form class="container-fluid justify-content-start">
-		    <button class="btn btn-outline-success me-2" type="button"><a href="{{url_for('login')}}">Login</a><br></button>
-		    <button class="btn btn-sm btn-outline-secondary" type="button"> <a href="{{url_for('signup')}}">Signup</a><br></button>
-			      </form>
-
-	<!--NAVBAR-->
+	    <!--NAVBAR-->
 	</nav>
 	{% block main %}
-hi
+
 	{% endblock %}
     <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/aos.js') }}"></script>
