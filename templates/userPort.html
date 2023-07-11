@@ -2,6 +2,7 @@
 {% block main %}
     <a href="{{url_for('home')}}">click here to go Home</a><br>
 {% endblock %}
+<div class="container">
     {% if alx == True %}
         <h1>
             ALX Fellow 📚🏅🎓🌟
@@ -11,8 +12,16 @@
             Not an ALX Fellow
         </h1>
     {% endif %}
-    <p> {{ user.name }}</p>
+    <p><img src="{{user.avatarUrl}}" class="img img-responsive w-50" > {{ user.name }}</p>
     <p> {{ user.bio }} </p><br>
+
+
+    <h3>Activity Stats</h3>
+    <p>
+        <img src="https://github-readme-stats.vercel.app/api?username={{user.login}}&theme=synthwave&show_icons=true&hide_border=false&include_all_commits=true&count_private=true" /><br/>
+        <img src="https://github-readme-streak-stats.herokuapp.com/?user={{user.login}}&theme=synthwave&show_icons=true&hide_border=false" />
+    </p>
+
     <h3> Projects </h3>
     {% if all_repos %}
         {% for repo in all_repos %}
@@ -38,11 +47,7 @@
     <p>{{ education.year }}</p>
     <p>{{ education.degree }}</p><br>
 
-    <h3>Contributions</h3>
-    <p>
-        <img src="https://github-readme-stats.vercel.app/api?username={{user.login}}&theme=synthwave&show_icons=true&hide_border=false&include_all_commits=true&count_private=true" /><br/>
-        <img src="https://github-readme-streak-stats.herokuapp.com/?user={{user.login}}&theme=synthwave&show_icons=true&hide_border=false" />
-    </p><br>
+    
     
     <h3>You can contact me</h3>
     {% if socials %}
@@ -54,5 +59,6 @@
     {% endif %}<br>
     <h3>Address</h3>
     <p>{{ address }}</p><br>
+    </div>
 </body>
 </html>

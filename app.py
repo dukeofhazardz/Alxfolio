@@ -12,14 +12,14 @@ from wtforms.validators import ValidationError
 from flask_bcrypt import Bcrypt
 from functions import *
 from forms import *
-
+ 
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mysecretkey'
-bcrypt = Bcrypt(app)
+bcrypt = Bcrypt(app) 
 
-login_manager = LoginManager()
-login_manager.init_app(app)
+login_manager = LoginManager() 
+login_manager.init_app(app) 
 login_manager.login_view = "login"
 
 @login_manager.user_loader
@@ -86,10 +86,10 @@ def dashboard(user):
     user_id = storage.get_user_git(user).id
     address = storage.get_user_git(user).address
     user = get_user(username)
-    alx = validate_alx(username)
+    alx = validate_alx(username) 
     all_repos = get_all_repos(username)
     bio = get_bio(user_id)
-    whatido = get_whatido(user_id)
+    whatido = get_whatido(user_id)  
     title = get_title(user_id)
     socials = get_socials(user_id)
     education = get_education(user_id)
@@ -195,4 +195,4 @@ def userPortfolio(user):
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=5000)  

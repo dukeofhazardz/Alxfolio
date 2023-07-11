@@ -1,15 +1,21 @@
 {% include 'base.html' %}
 {% block main %}
-  <div class="container">
-    <h1>Login</h1>
+<div class="container pt-4 d-flex justify-content-center">
+  <div class="card w-50 bd-info">
+    <h1 class="card-title text-center pt-4 ">Login</h1>
+    <div class="card-body">
     <form method="POST" action="">
       {{ form.csrf_token }}<br>
       {{ form.hidden_tag() }}<br>
-      {{ form.email }}<br>
-      {{ form.password }}<br>
-      {{ form.submit }}<br>
+      {{ form.email (class_='form-control')}}<br>
+      {{ form.password (class_='form-control')}}<br>
+      {{ form.submit (class_='btn btn-success')}}<br>
     </form>
-  </div><br><br>
-  <a href="{{url_for('home')}}">Home</a><br>
-  <a href="{{url_for('signup')}}">Don't have an account? Signup!</a><br>
+    </div>
+    <div class="card-footer bg-success">
+  <a class="card-link text-decoration-none text-light" href="{{url_for('home')}}">Home</a><br>
+  <a class="card-link text-decoration-none text-light" href="{{url_for('signup')}}">Don't have an account? Signup!</a><br>
+  </div>
+  </div>
+  </div>
 {% endblock %}

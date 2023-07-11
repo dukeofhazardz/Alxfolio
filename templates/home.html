@@ -1,19 +1,34 @@
 {% include 'base.html' %}
 {% block base %}
-<div class="container">
-    <h1>Alxfolio</h1>
-</div><br><br>
-<p>Signup to Alxfolio to spin up a personal portfolio from Github!</p><br>
-<h3>Below are the portfolios of our registered users</h3><br>
-{% for user in all_users %}
-    <ul>
-        <li>
-            <a href="{{url_for('userPortfolio', user=user.github_username)}}">{{ user.first_name }} {{ user.last_name }}</a><br>
-        </li>
-    </ul>
-{% endfor %}
-<a href="{{url_for('login')}}">Login</a><br>
-<a href="{{url_for('signup')}}">Signup</a><br><br>
+<div class="container justify-content-center">
 
-<a href="https://github.com/dukeofhazardz/Alxfolio/">Star 🌟 us on Github</a><br>
+    <h1 class="navbar-brand">ALXFOLIO <i class="fa fa-home"></i></h1>
+    <img class="img img-responsive w-50"src="/static/do-hard-things.jpeg">
+    <a class="btn btn-secondary" href="{{url_for('login')}}">Login <i class="fa fa-sign-in"></i></a><br>
+<a class="btn btn-secondary mt-2" href="{{url_for('signup')}}">Signup <i class="fa fa-user"></i></a><br><br>
+
+
+<p class="blockqoute">Signup to Alxfolio to spin up a personal portfolio from Github!</p>
+
+<h3>Below are the portfolios of our registered users</h3>
+<div class="row">
+{% for user in all_users %}
+    <div class="card col-sm-4 col=md-4">
+
+        <div class="card-body">
+            <img class="card-img w-50" src="{{ user.avatar }}" >
+            <a class="text-decoration-none" href="{{url_for('userPortfolio', user=user.github_username)}}">{{ user.first_name }} {{ user.last_name }}</a>
+        </div>
+        
+          {{user.stars}}
+        
+        </div>
+        
+{% endfor %}
+
+</div>
+<hr class="divider">
+<a class="text-decoration-none" href="https://github.com/dukeofhazardz/Alxfolio/">Star 🌟 us on Github</a>
+</div>
+
 {% endblock %}
