@@ -1,7 +1,7 @@
 {% include 'base.html' %}
 {% block main %}
 <div class="container pt-4 d-flex justify-content-center">
-  <div class="card w-50 bd-info">
+  <div class="card w-70">
     <h1 class="card-title text-center pt-4 ">Login</h1>
     <div class="card-body">
     <form method="POST" action="">
@@ -9,12 +9,12 @@
       {{ form.hidden_tag() }}<br>
       {{ form.email (class_='form-control')}}<br>
       {{ form.password (class_='form-control')}}<br>
-      {{ form.submit (class_='btn btn-success')}}<br>
+      {{ form.submit (class_='btn bg-theme text-light')}}<br>
     </form>
     </div>
-    <div class="card-footer bg-success">
+    <div class="card-footer bg-theme">
   <a class="card-link text-decoration-none text-light" href="{{url_for('home')}}">Home</a><br>
-  <a class="card-link text-decoration-none text-light" href="{{url_for('signup')}}">Don't have an account? Signup!</a><br>
+  <a class="card-link text-decoration-none text-info" href="{{url_for('signup')}}">Don't have an account? Signup!</a><br>
   </div>
   </div>
   </div>

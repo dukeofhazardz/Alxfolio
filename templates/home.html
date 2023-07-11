@@ -3,9 +3,9 @@
 <div class="container justify-content-center">
 
     <h1 class="navbar-brand">ALXFOLIO <i class="fa fa-home"></i></h1>
-    <img class="img img-responsive w-50"src="/static/do-hard-things.jpeg">
-    <a class="btn btn-secondary" href="{{url_for('login')}}">Login <i class="fa fa-sign-in"></i></a><br>
-<a class="btn btn-secondary mt-2" href="{{url_for('signup')}}">Signup <i class="fa fa-user"></i></a><br><br>
+    <img class="img img-responsive w-50"src="/static/img/do-hard-things.jpeg">
+    <a class="btn btn-success" href="{{url_for('login')}}">Login <i class="fa fa-sign-in"></i></a><br>
+<a class="btn btn-success mt-2" href="{{url_for('signup')}}">Signup <i class="fa fa-user"></i></a><br><br>
 
 
 <p class="blockqoute">Signup to Alxfolio to spin up a personal portfolio from Github!</p>
@@ -13,16 +13,21 @@
 <h3>Below are the portfolios of our registered users</h3>
 <div class="row">
 {% for user in all_users %}
-    <div class="card col-sm-4 col=md-4">
+
+<div class="col-4">
+    <div class="card  bg-theme text-light">
 
         <div class="card-body">
-            <img class="card-img w-50" src="{{ user.avatar }}" >
-            <a class="text-decoration-none" href="{{url_for('userPortfolio', user=user.github_username)}}">{{ user.first_name }} {{ user.last_name }}</a>
+           <img src="https://github.com/{{user.github_username}}.png" class="img img-responsive" width="60px" height="60px" > 
+           <br> <a class="text-decoration-none" href="{{url_for('userPortfolio', user=user.github_username)}}">
+            {{ user.first_name }} {{ user.last_name }}
+            </a>
+            
+           <p> {{user.address}}</p>
+        </div></div>
+        
         </div>
         
-          {{user.stars}}
-        
-        </div>
         
 {% endfor %}
 

@@ -1,6 +1,6 @@
 {% include 'base.html' %}
 {% block main %}
-    <a href="{{url_for('home')}}">click here to go Home</a><br>
+    <a class="text-decoration-none" href="{{url_for('home')}}">Home <i class="fa fa-home"></i></a>
 {% endblock %}
 <div class="container">
     {% if alx == True %}
@@ -12,53 +12,78 @@
             Not an ALX Fellow
         </h1>
     {% endif %}
-    <p><img src="{{user.avatarUrl}}" class="img img-responsive w-50" > {{ user.name }}</p>
-    <p> {{ user.bio }} </p><br>
+    <div class="card w-50 p-4 bg-theme text-light">
+    <p><img src="https://github.com/{{user.login}}.png" class="img img-responsive" width="60px" height="60px" > {{ user.name }}</p>
+    <p> {{ user.bio }} </p>
 
-
-    <h3>Activity Stats</h3>
-    <p>
-        <img src="https://github-readme-stats.vercel.app/api?username={{user.login}}&theme=synthwave&show_icons=true&hide_border=false&include_all_commits=true&count_private=true" /><br/>
-        <img src="https://github-readme-streak-stats.herokuapp.com/?user={{user.login}}&theme=synthwave&show_icons=true&hide_border=false" />
-    </p>
-
-    <h3> Projects </h3>
-    {% if all_repos %}
-        {% for repo in all_repos %}
-            <ul>
-                <li>
-                    <a href="{{ repo.url }}">{{ repo.name }}</a>
-                    <p>{{ repo.description }}</p>
-                </li>
-            </ul>
-        {% endfor %}<br>
+  
+    {%if bio %}
+    <h6>About me</h6>
+      {% if user_title %}
+    <p>{{ user_title }}</p>
+    {% endif %}
+    <p>{{ bio }}</p>
     {% endif %}
 
-    <h3>About me</h3>
-    <h4>{{ user.name }}</h4>
-    <p>{{ user_title }}</p>
-    <p>{{ bio }}</p><br>
-
-    <h3>What I do</h3>
-    <p>{{ whatido }}</p><br>
-
-    <h3>Education</h3>
+    {% if whatido %}
+    <h6>What I do</h6>
+    <p>{{ whatido }}</p>
+    {% endif %}
+ {% if education %}
+    <h6>Education</h6>
     <p>{{ education.school }}</p>
     <p>{{ education.year }}</p>
     <p>{{ education.degree }}</p><br>
 
+    {% endif %}
     
-    
-    <h3>You can contact me</h3>
     {% if socials %}
+
+    <h6>You can contact me</h6>
     {% for social in socials %}
         <ul>
             <li>{{ social }}</li>
         </ul>
     {% endfor %}
-    {% endif %}<br>
-    <h3>Address</h3>
-    <p>{{ address }}</p><br>
+    {% endif %}
+
+    {% if address %}
+    <h6>Address</h6>
+    <p>{{ address }}</p>
+    {% endif %}
+</div>
+
+    <h6 class="mt-4 text-info">Activity Stats</h6>
+    <p>
+        <img src="https://github-readme-stats.vercel.app/api?username={{user.login}}&theme=synthwave&show_icons=true&hide_border=false&include_all_commits=true&count_private=true" /><br/>
+        <img src="https://github-readme-streak-stats.herokuapp.com/?user={{user.login}}&theme=synthwave&show_icons=true&hide_border=false" />
+    </p>
+
+    <h6 class="mt-4 text-info"> Projects </h6>
+    {% if all_repos %}
+        {% for repo in all_repos %}
+
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#{{ repo.name }}" aria-expanded="true" aria-controls="{{ repo.name }}">
+    
+                    <a class="text-decoration-none" href="{{ repo.url }}">{{ repo.name }} <i class="fa fa-external-link"></i></a>
+      </button>
+    </h2>
+     {% if repo.description %}
+    <div id="{{ repo.name }}" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+    {{ repo.description }}   
     </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+        {% endfor %}
+    {% endif %}
+
+    </div>
+
 </body>
 </html>

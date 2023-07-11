@@ -169,16 +169,16 @@ def addSocials(user):
            methods=['GET', 'POST'])
 def userPortfolio(user):
     if user:
-        username = user
+        username = user 
         user_obj = storage.get_user_git(user)
         user_id = None
         address = None
         try:
-            user_id = user_obj.id
-            address = user_obj.address
+            user_id = user_obj.id 
+            address = user_obj.address 
         except Exception as e:
             print(e)
-        user = get_user(username)
+        user = get_user(username)  
         alx = validate_alx(username)
         all_repos = get_all_repos(username)
         bio = get_bio(user_id)
@@ -195,4 +195,4 @@ def userPortfolio(user):
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)  
+    app.run(host="0.0.0.0", port=5000)
