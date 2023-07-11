@@ -4,18 +4,18 @@
 
     <h1 class="navbar-brand">ALXFOLIO <i class="fa fa-home"></i></h1>
     <img class="img img-responsive w-50"src="/static/img/do-hard-things.jpeg">
-    <a class="btn btn-success" href="{{url_for('login')}}">Login <i class="fa fa-sign-in"></i></a><br>
-<a class="btn btn-success mt-2" href="{{url_for('signup')}}">Signup <i class="fa fa-user"></i></a><br><br>
+    <a class="btn btn-warning" href="{{url_for('login')}}">Login <i class="fa fa-sign-in"></i></a><br>
+<a class="btn btn-warning mt-2" href="{{url_for('signup')}}">Signup <i class="fa fa-user"></i></a><br><br>
 
 
 <p class="blockqoute">Signup to Alxfolio to spin up a personal portfolio from Github!</p>
 
-<h3>Below are the portfolios of our registered users</h3>
+<h3 class="title" >Below are the portfolios of our registered users</h3>
 <div class="row">
 {% for user in all_users %}
 
-<div class="col-4">
-    <div class="card  bg-theme text-light">
+<div class="col-6">
+    <div class="card bg-theme text-light">
 
         <div class="card-body">
            <img src="https://github.com/{{user.github_username}}.png" class="img img-responsive" width="60px" height="60px" > 
@@ -24,6 +24,7 @@
             </a>
             
            <p> {{user.address}}</p>
+           <img src="https://github-readme-stats.vercel.app/api/top-langs/?username={{ user.github_username}}" >
         </div></div>
         
         </div>
