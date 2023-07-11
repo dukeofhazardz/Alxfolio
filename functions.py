@@ -4,7 +4,7 @@ import github
 from models import storage
 from github import Github
 
-g = Github(base_url="https://api.github.com")
+g = Github(base_url="https://api.github.com", verify=False)
 check_repo_exists = "alx-system_engineering-devops"
 
 def get_user(username):
