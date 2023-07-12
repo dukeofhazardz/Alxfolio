@@ -7,16 +7,13 @@ certifi==2020.6.20
 cffi==1.15.1
 chardet==4.0.0
 click==8.1.4
-cloud-init==23.1.2
 colorama==0.4.4
-command-not-found==0.3
 configobj==5.0.6
 constantly==15.1.0
 cryptography==3.4.8
 dbus-python==1.2.18
 Deprecated==1.2.14
 distro==1.7.0
-distro-info===1.1build1
 dnspython==2.3.0
 email-validator==2.0.0.post2
 Flask==2.3.2
@@ -25,7 +22,6 @@ Flask-Login==0.6.2
 Flask-SQLAlchemy==3.0.5
 Flask-WTF==1.1.1
 greenlet==2.0.2
-gyp==0.1
 httplib2==0.20.2
 hyperlink==21.0.0
 idna==3.3
@@ -75,7 +71,6 @@ ssh-import-id==5.11
 systemd-python==234
 Twisted==22.1.0
 typing_extensions==4.7.1
-ubuntu-advantage-tools==8001
 ufw==0.36.1
 unattended-upgrades==0.1
 urllib3==1.26.5

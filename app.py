@@ -12,14 +12,14 @@ from wtforms.validators import ValidationError
 from flask_bcrypt import Bcrypt
 from functions import *
 from forms import *
-
+ 
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mysecretkey'
-bcrypt = Bcrypt(app)
+bcrypt = Bcrypt(app) 
 
-login_manager = LoginManager()
-login_manager.init_app(app)
+login_manager = LoginManager() 
+login_manager.init_app(app) 
 login_manager.login_view = "login"
 
 @login_manager.user_loader
@@ -29,7 +29,8 @@ def load_user(user_id):
 @app.route("/", strict_slashes=False)
 def home():
     all_users = get_all_user(User)
-    return render_template("home.html", title="Home", all_users=all_users)
+    return render_template("home.html", title="Home", all_users=all_users,
+                           current_user=current_user)
 
 @app.route("/signup", strict_slashes=False,
            methods=['GET', 'POST'])
@@ -86,10 +87,10 @@ def dashboard(user):
     user_id = storage.get_user_git(user).id
     address = storage.get_user_git(user).address
     user = get_user(username)
-    alx = validate_alx(username)
+    alx = validate_alx(username) 
     all_repos = get_all_repos(username)
     bio = get_bio(user_id)
-    whatido = get_whatido(user_id)
+    whatido = get_whatido(user_id)  
     title = get_title(user_id)
     socials = get_socials(user_id)
     education = get_education(user_id)
@@ -169,16 +170,16 @@ def addSocials(user):
            methods=['GET', 'POST'])
 def userPortfolio(user):
     if user:
-        username = user
+        username = user 
         user_obj = storage.get_user_git(user)
         user_id = None
         address = None
         try:
-            user_id = user_obj.id
-            address = user_obj.address
+            user_id = user_obj.id 
+            address = user_obj.address 
         except Exception as e:
             print(e)
-        user = get_user(username)
+        user = get_user(username)  
         alx = validate_alx(username)
         all_repos = get_all_repos(username)
         bio = get_bio(user_id)

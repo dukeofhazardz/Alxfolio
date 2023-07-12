@@ -1,14 +1,20 @@
 {% include 'base.html' %}
 {% block main %}
-  <div class="container">
-      <h1>Add Education</h1>
+  <div class="container pt-4 d-flex justify-content-center">
+  <div class="card w-70">
+    <h3 class="card-title text-center pt-4 ">Add Education</h3>
+    <div class="card-body">
+
         <form method="POST" action="">
-            {{ form.csrf_token }}<br>
-            {{ form.hidden_tag() }}<br>
-            {{ form.school }}<br>
-            {{ form.year }}<br>
-            {{ form.degree }}<br>
-            {{ form.submit }}<br>
+            {{ form.csrf_token }}
+            {{ form.hidden_tag() }}
+            {{ form.school (class_='form-control')}}<br>
+            {{ form.year (class_='form-control')}}<br>
+            {{ form.degree (class_='form-control')}}<br>
+            {{ form.submit (class_='form-control bg-theme text-light')}}
         </form>
+          </div>
+  </div>
+
   </div>
 {% endblock %}
