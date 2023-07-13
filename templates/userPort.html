@@ -3,13 +3,9 @@
     <a class="text-decoration-none" href="{{url_for('home')}}">Home <i class="fa fa-home"></i></a>
 {% endblock %}
 <div class="container">
-    {% if alx == True %}
+ {% if alx == True %}
         <h1>
             ALX Fellow 📚🏅🎓🌟
-        </h1>
-    {% else %}
-        <h1>
-            Not an ALX Fellow
         </h1>
     {% endif %}
     <div class="card p-2 bg-theme text-light">
