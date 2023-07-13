@@ -8,32 +8,32 @@ click here to visit [Alxfolio](www.alxfolio.tech)
 
 ## Usage 🛠️
 - The landing pages displays the list of registered users, their most used languages and a link to their portfolios
-![](https://github.com/dukeofhazardz/Alxfolio/tree/main/assets/alxfolio_img_1.jpg)
+![](https://github.com/dukeofhazardz/Alxfolio/blob/main/assets/alxfolio_img_1.jpg)
 - In order to generate a portfolio using ALXFolio you have to sign up, but if you already have an account you can go ahead and login.
 
 *Signup page*
-![](https://github.com/dukeofhazardz/Alxfolio/tree/main/assets/alxfolio_img_3.jpg)
+![](https://github.com/dukeofhazardz/Alxfolio/blob/main/assets/alxfolio_img_3.jpg)
 
 *Login page*
-![](https://github.com/dukeofhazardz/Alxfolio/tree/main/assets/alxfolio_img.jpg)
+![](https://github.com/dukeofhazardz/Alxfolio/blob/main/assets/alxfolio_img.jpg)
 
 - Once the signup is completed you will be asked to login and afterwards redirected to a dashboard where you can customize your portfolio.
 
 *Dashboard*
-![](https://github.com/dukeofhazardz/Alxfolio/tree/main/assets/alxfolio_img_5.jpg)
-![](https://github.com/dukeofhazardz/Alxfolio/tree/main/assets/alxfolio_img_6.jpg)
+![](https://github.com/dukeofhazardz/Alxfolio/blob/main/assets/alxfolio_img_5.jpg)
+![](https://github.com/dukeofhazardz/Alxfolio/blob/main/assets/alxfolio_img_6.jpg)
 
 - You can customize your Portfolio by clicking on the `Add education` or `Add socials and bio` button
-![](https://github.com/dukeofhazardz/Alxfolio/tree/main/assets/alxfolio_img_7.jpg)
+![](https://github.com/dukeofhazardz/Alxfolio/blob/main/assets/alxfolio_img_7.jpg)
 
 *Add Education Page*
-![](https://github.com/dukeofhazardz/Alxfolio/tree/main/assets/alxfolio_img_8.jpg)
+![](https://github.com/dukeofhazardz/Alxfolio/blob/main/assets/alxfolio_img_8.jpg)
 
 *Add Socials and Bio Page*
-![](https://github.com/dukeofhazardz/Alxfolio/tree/main/assets/alxfolio_img_9.jpg)
+![](https://github.com/dukeofhazardz/Alxfolio/blob/main/assets/alxfolio_img_9.jpg)
 
 - You can also view the portfolio pages of other in the Home page
-![](https://github.com/dukeofhazardz/Alxfolio/tree/main/assets/alxfolio_img_10.jpg)
+![](https://github.com/dukeofhazardz/Alxfolio/blob/main/assets/alxfolio_img_10.jpg)
 
 - A third party can view your portfolio by visiting the link `alxfolio.tech/<your_github_username>`
 
