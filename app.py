@@ -29,7 +29,8 @@ def load_user(user_id):
 @app.route("/", strict_slashes=False)
 def home():
     all_users = get_all_user(User)
-    return render_template("home.html", title="Home", all_users=all_users)
+    return render_template("home.html", title="Home", all_users=all_users,
+                           current_user=current_user)
 
 @app.route("/signup", strict_slashes=False,
            methods=['GET', 'POST'])
