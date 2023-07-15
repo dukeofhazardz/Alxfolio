@@ -3,16 +3,16 @@
 Alxfolio is a web service that is built for ALX students and enables anyone to create and showcase their dynamic and self-updating portfolios using the GitHub API. The portfolios automatically reflect the students' GitHub activities, such as project contributions, commits, and repositories. This project aims to provide ALX students with a professional online presence, allowing them to highlight their skills, projects, and achievements to potential employers and the tech community. The web service utilizes technologies such as Python, Flask, Gunicorn, Nginx and offers features like portfolio customization, project filtering, and real-time updates. Join us in building a powerful tool to empower ALX students in their career journeys.
 
 ## Languages and Technologies 👨‍💻
-[![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://github.com/dukeofhazardz)
-[![SQL](https://img.shields.io/badge/sql-black?style=for-the-badge&logo=mysql)](https://github.com/dukeofhazardz)
-[![Flask](https://img.shields.io/badge/flask-black?style=for-the-badge&logo=flask&color=black)](https://github.com/dukeofhazardz)
-[![Nginx](https://img.shields.io/badge/nginx-black?style=for-the-badge&logo=nginx&color=black)](https://github.com/dukeofhazardz)
-[![Gunicorn](https://img.shields.io/badge/gunicorn-black?style=for-the-badge&logo=gunicorn&color=black)](https://github.com/dukeofhazardz)<br/>
-[![Redis](https://img.shields.io/badge/Redis-black?style=for-the-badge&logo=redis)](https://github.com/dukeofhazardz)
-[![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)](https://github.com/dukeofhazardz)
-[![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)](https://github.com/dukeofhazardz)
-[![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)](https://github.com/dukeofhazardz)
-[![Linux](https://img.shields.io/badge/linux-black?style=for-the-badge&logo=Linux)](https://github.com/dukeofhazardz)
+[![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://github.com/dukeofhazardz/Alxfolio)
+[![SQL](https://img.shields.io/badge/sql-black?style=for-the-badge&logo=mysql)](https://github.com/dukeofhazardz/Alxfolio)
+[![Flask](https://img.shields.io/badge/flask-black?style=for-the-badge&logo=flask&color=black)](https://github.com/dukeofhazardz/Alxfolio)
+[![Nginx](https://img.shields.io/badge/nginx-black?style=for-the-badge&logo=nginx&color=black)](https://github.com/dukeofhazardz/Alxfolio)
+[![Gunicorn](https://img.shields.io/badge/gunicorn-black?style=for-the-badge&logo=gunicorn&color=black)](https://github.com/dukeofhazardz/Alxfolio)<br/>
+[![Redis](https://img.shields.io/badge/Redis-black?style=for-the-badge&logo=redis)](https://github.com/dukeofhazardz/Alxfolio)
+[![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)](https://github.com/dukeofhazardz/Alxfolio)
+[![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)](https://github.com/dukeofhazardz/Alxfolio)
+[![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)](https://github.com/dukeofhazardz/Alxfolio)
+[![Linux](https://img.shields.io/badge/linux-black?style=for-the-badge&logo=Linux)](https://github.com/dukeofhazardz/Alxfolio)
 
 ## Website 🌐
 
