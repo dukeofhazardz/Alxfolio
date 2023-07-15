@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""A module that defines the Base class"""
 
 from datetime import datetime
 from sqlalchemy import Column, Integer, DateTime

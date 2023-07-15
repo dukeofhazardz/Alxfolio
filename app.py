@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """A module that starts the Flask App"""
 
 from models import storage
@@ -24,10 +23,12 @@ login_manager.login_view = "login"
 
 @login_manager.user_loader
 def load_user(user_id):
+    """A function that loads the user from storage by id"""
     return storage.get_user_by_id(int(user_id))
 
 @app.route("/", strict_slashes=False)
 def home():
+    """A function that renders the home page"""
     all_users = get_all_user(User)
     return render_template("home.html", title="Home", all_users=all_users,
                            current_user=current_user)
@@ -35,6 +36,7 @@ def home():
 @app.route("/signup", strict_slashes=False,
            methods=['GET', 'POST'])
 def signup():
+    """A function that renders the signup page"""
     form = SignupForm()
 
     if request.method == 'POST':
@@ -59,6 +61,7 @@ def signup():
 @app.route("/login", strict_slashes=False,
            methods=['GET', 'POST'])
 def login():
+    """A function that renders the login page"""
     form = LoginForm()
 
     if request.method == 'POST':
@@ -75,6 +78,7 @@ def login():
            methods=['GET', 'POST'])
 @login_required
 def logout():
+    """A function that renders the logout page"""
     logout_user()
     flash("You have been loggged out!", "info")
     return redirect(url_for('login'))
@@ -83,6 +87,7 @@ def logout():
            methods=['GET', 'POST'])
 @login_required
 def dashboard(user):
+    """A function that renders the dashboard page"""
     username = user
     user_id = storage.get_user_git(user).id
     address = storage.get_user_git(user).address
@@ -103,6 +108,7 @@ def dashboard(user):
            methods=['GET', 'POST'])
 @login_required
 def addEducation(user):
+    """A function that renders the add education page"""
     form = EducationForm()
 
     if request.method == 'POST':
@@ -132,6 +138,7 @@ def addEducation(user):
            methods=['GET', 'POST'])
 @login_required
 def addSocials(user):
+    """A function that renders the add socials and bio page"""
     form = SocialsForm()
 
     if request.method == 'POST':
@@ -169,6 +176,7 @@ def addSocials(user):
 @app.route("/<user>", strict_slashes=False,
            methods=['GET', 'POST'])
 def userPortfolio(user):
+    """A function that renders the user portfolio page"""
     if user:
         username = user 
         user_obj = storage.get_user_git(user)
