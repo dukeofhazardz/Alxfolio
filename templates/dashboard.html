@@ -4,7 +4,7 @@
      <a class="text-decoration-none" href="{{ url_for('logout') }}">Logout <i class="fa fa-sign-out"></i></a>
     
   <div class="nav justify-content-center">
-    <h4 class=""navbar-brand>Welcome {{ user.login }}</h4>
+    <h4 class=""navbar-brand>Welcome {{ user['login'] }}</h4>
    </div>
 {% endblock %}
  <div class="container">
@@ -18,8 +18,8 @@
         </h1>
     {% endif %}
     <div class="card p-2 bg-theme text-light">
-    <p><img src="https://github.com/{{user.login}}.png" class="img img-responsive" width="60px" height="60px" > {{ user.name }}</p>
-    <p> {{ user.bio }} </p>
+    <p><img src="https://github.com/{{user['login']}}.png" class="img img-responsive" width="60px" height="60px" > {{ user['name'] }}</p>
+    <p> {{ user['bio'] }} </p>
 
   
     {%if bio %}
@@ -56,15 +56,15 @@
     <h6>Address</h6>
     <p>{{ address }}</p>
     {% endif %}
-     <a class="text-decoration-none text-light" href="{{ url_for('addEducation', user=user.login) }}">Add education  <i class="fa fa-edit"></i></a><br>
-    <a class="text-decoration-none text-light" href="{{ url_for('addSocials', user=user.login) }}">Add socials and bio  <i class="fa fa-edit"></i></a><br>
+     <a class="text-decoration-none text-light" href="{{ url_for('addEducation', user=user['login']) }}">Add education  <i class="fa fa-edit"></i></a><br>
+    <a class="text-decoration-none text-light" href="{{ url_for('addSocials', user=user['login']) }}">Add socials and bio  <i class="fa fa-edit"></i></a><br>
 
 </div>
 
     <h3 class="mt-4 text-info">Activity Stats</h3>
     <p>
-        <img src="https://github-readme-stats.vercel.app/api?username={{user.login}}&theme=synthwave&show_icons=true&hide_border=false&include_all_commits=true&count_private=true" /><br/>
-        <img src="https://github-readme-streak-stats.herokuapp.com/?user={{user.login}}&theme=synthwave&show_icons=true&hide_border=false" />
+        <img src="https://github-readme-stats.vercel.app/api?username={{user['login']}}&theme=synthwave&show_icons=true&hide_border=false&include_all_commits=true&count_private=true" /><br/>
+        <img src="https://github-readme-streak-stats.herokuapp.com/?user={{user['login']}}&theme=synthwave&show_icons=true&hide_border=false" />
     </p>
 
     <h3 class="mt-4 text-info"> Projects </h3>
