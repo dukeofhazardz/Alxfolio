@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""A module that contains the Api functions for Alxfolio"""
 
 import github
 import json
@@ -10,6 +11,7 @@ from datetime import timedelta
 redis_client = Redis(host='localhost', port=6379, db=0)
 
 def get_user(username):
+    """A function that returns the user object from redis cache"""
     user = redis_client.get(f"{username}")
     if user is None:
         try:
@@ -26,6 +28,7 @@ def get_user(username):
     return user
 
 def validate_alx(username):
+    """A function that validates an ALX student"""
     repo = redis_client.get(f"{username}"+"_repo")
     if repo is None:
         try:
@@ -40,6 +43,7 @@ def validate_alx(username):
     return True
 
 def get_all_repos(username):
+    """A function that gets user repo from redis cache"""
     all_repos = redis_client.get(f"{username}"+"_all_repos")
     if all_repos is None:
         try:
@@ -62,24 +66,28 @@ def get_all_repos(username):
     return all_repos
 
 def get_bio(user_id):
+    """A function that retrieves user bio from storage"""
     bio = storage.get_socials_git(user_id)
     if bio:
         return bio.bio
     return None
 
 def get_title(user_id):
+    """A function that retrieves user title from storage"""
     title = storage.get_socials_git(user_id)
     if title:
         return title.title
     return None
 
 def get_whatido(user_id):
+    """A function that retrieves user whatido from storage"""
     whatido = storage.get_socials_git(user_id)
     if whatido:
         return whatido.whatido
     return None
 
 def get_socials(user_id):
+    """A function that retrieves user socials from storage"""
     socials = []
     s = storage.get_socials_git(user_id)
     if s:
@@ -90,12 +98,14 @@ def get_socials(user_id):
     return None
 
 def get_education(user_id):
+    """A function that retrieves user education from storage"""
     education = storage.get_education_git(user_id)
     if education:
         return education
     return None
 
 def get_all_user(User):
+    """A function that retrieves all users from storage"""
     all_users = storage.all(User)
     all = [user for user in all_users.values()]
     return all

@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """A module containing all forms used in the app"""
 
 from flask_wtf import FlaskForm
@@ -8,6 +7,7 @@ from wtforms.validators import InputRequired, Length, Optional
 
 
 class SignupForm(FlaskForm):
+    """A class that defines the Signup form"""
     first_name = StringField(validators=[InputRequired(), Length(
         min=2, max=100)], render_kw={"placeholder": "First Name"})
     
@@ -33,6 +33,7 @@ class SignupForm(FlaskForm):
 
 
 class LoginForm(FlaskForm):
+    """A class that defines the Login form"""
     email = StringField(validators=[InputRequired(), Length(
         min=10, max=100)], render_kw={"placeholder": "Email"})
     
@@ -43,6 +44,7 @@ class LoginForm(FlaskForm):
 
 
 class EducationForm(FlaskForm):
+    """A class that defines the Education form"""
     school = StringField(validators=[InputRequired(), Length(
         min=10, max=100)], render_kw={"placeholder": "School"})
     
@@ -56,6 +58,7 @@ class EducationForm(FlaskForm):
 
 
 class SocialsForm(FlaskForm):
+    """A class that defines the Socials form"""
     bio = StringField(validators=[Optional(), Length(
         min=10, max=1000)], render_kw={"placeholder": "Bio"})
 
