@@ -1,6 +1,6 @@
 # ALXFolio 🏠
 
-Alxfolio is a web service that is built for ALX students and enables anyone to create and showcase their dynamic and self-updating portfolios using the GitHub API. The portfolios automatically reflect the students' GitHub activities, such as project contributions, commits, and repositories. This project aims to provide ALX students with a professional online presence, allowing them to highlight their skills, projects, and achievements to potential employers and the tech community. The web service utilizes technologies such as Python, Flask, Gunicorn, Nginx and offers features like portfolio customization, project filtering, and real-time updates. Join us in building a powerful tool to empower ALX students in their career journeys.
+Alxfolio is a web service that is built for ALX students and enables anyone to create and showcase their dynamic and self-updating portfolios using the GitHub API. The portfolios automatically reflect the students' GitHub activities, such as project contributions, commits, and repositories. This project aims to provide ALX students with a professional online presence, allowing them to highlight their skills, projects, and achievements to potential employers and the tech community. The web service utilizes technologies such as Python, Flask, Gunicorn, Nginx, Redis and offers features like portfolio customization, project filtering, and real-time updates. Join us in building a powerful tool to empower ALX students in their career journeys.
 
 ## Languages and Technologies 👨‍💻
 [![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://github.com/dukeofhazardz/Alxfolio)
@@ -31,7 +31,8 @@ click here to visit [Alxfolio](www.alxfolio.tech)
 **Login page**
 ![](https://github.com/dukeofhazardz/Alxfolio/blob/main/assets/alxfolio_img.jpg)
 
-- Once the signup is completed you will be asked to login and afterwards redirected to a dashboard where you can customize your portfolio.<br/>
+
+- Once the signup is completed you will be asked to login and afterwards redirected to a dashboard where you can customize your portfolio. The dashboard detects if you are an ALX fellow, but if you are not, it provides a link to join the ALX/Holberton software engineering program if you're interested.
 
 
 **Dashboard**

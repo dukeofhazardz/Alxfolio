@@ -9,7 +9,7 @@
         </h1>
     {% endif %}
     <div class="card p-2 bg-theme text-light">
-    <p><img src="https://github.com/{{user.login}}.png" class="img img-responsive" width="60px" height="60px" > {{ user.name }}</p>
+    <p><img src="https://github.com/{{user['login']}}.png" class="img img-responsive" width="60px" height="60px" > {{ user['name'] }}</p>
     
 
   
@@ -51,8 +51,8 @@
 
     <h3 class="mt-4 text-info">Activity Stats</h3>
     <p>
-        <img src="https://github-readme-stats.vercel.app/api?username={{user.login}}&theme=synthwave&show_icons=true&hide_border=false&include_all_commits=true&count_private=true" /><br/>
-        <img src="https://github-readme-streak-stats.herokuapp.com/?user={{user.login}}&theme=synthwave&show_icons=true&hide_border=false" />
+        <img src="https://github-readme-stats.vercel.app/api?username={{user['login']}}&theme=synthwave&show_icons=true&hide_border=false&include_all_commits=true&count_private=true" /><br/>
+        <img src="https://github-readme-streak-stats.herokuapp.com/?user={{user['login']}}&theme=synthwave&show_icons=true&hide_border=false" />
     </p>
 
     <h3 class="mt-4 text-info"> Projects </h3>
