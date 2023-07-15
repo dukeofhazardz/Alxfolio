@@ -30,8 +30,6 @@ click here to visit [Alxfolio](www.alxfolio.tech)
 
 **Login page**
 ![](https://github.com/dukeofhazardz/Alxfolio/blob/main/assets/alxfolio_img.jpg)
-
-
 - Once the signup is completed you will be asked to login and afterwards redirected to a dashboard where you can customize your portfolio. The dashboard detects if you are an ALX fellow, but if you are not, it provides a link to join the ALX/Holberton software engineering program if you're interested.<br/>
 
 **Dashboard**
