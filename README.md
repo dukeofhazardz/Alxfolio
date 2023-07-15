@@ -24,27 +24,28 @@ click here to visit [Alxfolio](www.alxfolio.tech)
 ![](https://github.com/dukeofhazardz/Alxfolio/blob/main/assets/alxfolio_img_1.jpg)
 - In order to generate a portfolio using ALXFolio you have to sign up, but if you already have an account you can go ahead and login.<br/>
 
-**Signup page**
+### Signup page
 
 ![](https://github.com/dukeofhazardz/Alxfolio/blob/main/assets/alxfolio_img_3.jpg)
 
-**Login page**
+### Login page
 ![](https://github.com/dukeofhazardz/Alxfolio/blob/main/assets/alxfolio_img.jpg)
-- Once the signup is completed you will be asked to login and afterwards redirected to a dashboard where you can customize your portfolio. The dashboard detects if you are an ALX fellow, but if you are not, it provides a link to join the ALX/Holberton software engineering program if you're interested.<br/>
+- Once the signup is completed you will be asked to login and afterwards redirected to a dashboard where you can customize your portfolio. The dashboard detects if you are an ALX fellow, but if you are not, it provides a link to join the ALX/Holberton software engineering program if you're interested.
 
-**Dashboard**
+### Dashboard
 
 ![](https://github.com/dukeofhazardz/Alxfolio/blob/main/assets/alxfolio_img_5.jpg)
 ![](https://github.com/dukeofhazardz/Alxfolio/blob/main/assets/alxfolio_img_6.jpg)
 
 - You can customize your Portfolio by clicking on the `Add education` or `Add socials and bio` button
 
-![](https://github.com/dukeofhazardz/Alxfolio/blob/main/assets/alxfolio_img_7.jpg)<br/>
+![](https://github.com/dukeofhazardz/Alxfolio/blob/main/assets/alxfolio_img_7.jpg)
 
 
-**Add Education Page**
+### Add Education Page
 ![](https://github.com/dukeofhazardz/Alxfolio/blob/main/assets/alxfolio_img_8.jpg)
-**Add Socials and Bio Page**
+
+### Add Socials and Bio Page
 
 ![](https://github.com/dukeofhazardz/Alxfolio/blob/main/assets/alxfolio_img_9.jpg)
 
