@@ -2,7 +2,7 @@
 
 Alxfolio is a web service that is built for ALX students and enables anyone to create and showcase their dynamic and self-updating portfolios using the GitHub API. The portfolios automatically reflect the students' GitHub activities, such as project contributions, commits, and repositories. This project aims to provide ALX students with a professional online presence, allowing them to highlight their skills, projects, and achievements to potential employers and the tech community. The web service utilizes technologies such as Python, Flask, Gunicorn, Nginx and offers features like portfolio customization, project filtering, and real-time updates. Join us in building a powerful tool to empower ALX students in their career journeys.
 
-## Languages and Technologies
+## Languages and Technologies 👨‍💻
 [![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://github.com/dukeofhazardz)
 [![SQL](https://img.shields.io/badge/sql-black?style=for-the-badge&logo=mysql)](https://github.com/dukeofhazardz)
 [![Flask](https://img.shields.io/badge/flask-black?style=for-the-badge&logo=flask&color=black)](https://github.com/dukeofhazardz)
@@ -22,7 +22,7 @@ click here to visit [Alxfolio](www.alxfolio.tech)
 - The landing pages displays the list of registered users, their most used languages and a link to their portfolios
 
 ![](https://github.com/dukeofhazardz/Alxfolio/blob/main/assets/alxfolio_img_1.jpg)
-- In order to generate a portfolio using ALXFolio you have to sign up, but if you already have an account you can go ahead and login.
+- In order to generate a portfolio using ALXFolio you have to sign up, but if you already have an account you can go ahead and login.<br/>
 
 **Signup page**
 
@@ -31,7 +31,7 @@ click here to visit [Alxfolio](www.alxfolio.tech)
 **Login page**
 ![](https://github.com/dukeofhazardz/Alxfolio/blob/main/assets/alxfolio_img.jpg)
 
-- Once the signup is completed you will be asked to login and afterwards redirected to a dashboard where you can customize your portfolio.
+- Once the signup is completed you will be asked to login and afterwards redirected to a dashboard where you can customize your portfolio.<br/>
 
 
 **Dashboard**
@@ -41,7 +41,7 @@ click here to visit [Alxfolio](www.alxfolio.tech)
 
 - You can customize your Portfolio by clicking on the `Add education` or `Add socials and bio` button
 
-![](https://github.com/dukeofhazardz/Alxfolio/blob/main/assets/alxfolio_img_7.jpg)
+![](https://github.com/dukeofhazardz/Alxfolio/blob/main/assets/alxfolio_img_7.jpg)<br/>
 
 
 **Add Education Page**
