@@ -14,7 +14,7 @@
 
   
     {%if bio %}
-    <h6>About me</h6>
+    <h6><strong>About me</strong></h6>
       {% if user_title %}
     <p>{{ user_title }}</p>
     {% endif %}
@@ -22,11 +22,11 @@
     {% endif %}
 
     {% if whatido %}
-    <h6>What I do</h6>
+    <h6><strong>What I do</strong></h6>
     <p>{{ whatido }}</p>
     {% endif %}
  {% if education %}
-    <h6>Education</h6>
+    <h6><strong>Education</strong></h6>
     <p>{{ education.school }}</p>
     <p>{{ education.year }}</p>
     <p>{{ education.degree }}</p><br>
@@ -35,7 +35,7 @@
     
     {% if socials %}
 
-    <h6>You can contact me</h6>
+    <h6><strong>You can contact me</strong></h6>
     {% for social in socials %}
         <ul>
             <li>{{ social }}</li>
@@ -44,7 +44,7 @@
     {% endif %}
 
     {% if address %}
-    <h6>Address</h6>
+    <h6><strong>Address</strong></h6>
     <p>{{ address }}</p>
     {% endif %}
 </div>
